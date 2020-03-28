@@ -1,19 +1,23 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'davidhalter/jedi'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'dense-analysis/ale'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-dispatch'
 Plug 'jiangmiao/auto-pairs' 
 Plug 'tmhedberg/SimpylFold' 
-Plug 'sbdchd/neoformat'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'FooSoft/vim-argwrap'
 call plug#end()
@@ -45,7 +49,7 @@ nnoremap <C-H> <C-W><C-H>
 " endif
 
 "use colorscheme
-colorscheme focuspoint
+colorscheme minimalist
 
 "toggle Nerdtree
 map <F3> :NERDTreeToggle<CR>
@@ -65,7 +69,6 @@ set scrolloff=3
 let mapleader="\<Space>"
 
 "leader key mappings
-nnoremap <leader>w  :Neoformat<CR>:w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>j @j
 nnoremap <leader>k @k
@@ -117,5 +120,46 @@ set clipboard=unnamedplus
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
-"formatting the file
-nnoremap <leader>f :Neoformat<CR>
+"lightline configuration
+let g:lightline = {
+	\ 'colorscheme': 'seoul256',
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \ },
+        \ 'component_function': {
+        \   'gitbranch': 'FugitiveHead'
+        \ },
+\ }
+
+"python file indentation
+nnoremap <leader>a ALEToggle<CR>
+au BufNewFile,BufRead *.py
+    \ set expandtab       |" replace tabs with spaces
+    \ set autoindent      |" copy indent when starting a new line
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+
+"linting with ALE
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint'],
+      \   'ruby': ['standardrb', 'rubocop'],
+      \   'javascript': ['eslint'],
+      \}
+let g:ale_fixers = {
+      \    'python': ['yapf'],
+      \}
+nnoremap <leader>f :ALEFix<CR>
+let g:ale_fix_on_save = 1
+nnoremap <leader>e :ALENextWrap<CR>
+nnoremap <leader>q :ALEPreviousWrap<CR>
+nnoremap <leader>a :ALEToggle<CR>
+
+"jedi
+let g:jedi#goto_command = "<leader>jg"
+let g:jedi#goto_assignments_command = "<leader>ja"
+let g:jedi#goto_stubs_command = "<leader>js"
+let g:jedi#goto_definitions_command = "<leader>jd"
+let g:jedi#documentation_command = ""
+let g:jedi#usages_command = "<leader>ju"
