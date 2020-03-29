@@ -125,10 +125,12 @@ let g:lightline = {
 	\ 'colorscheme': 'seoul256',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+        \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+        \   'right': [ [ 'lineinfo'], ['percent' ],
+        \             [ 'fileformat', 'fileencoding', 'filetype', 'ale_linters'] ]
         \ },
         \ 'component_function': {
-        \   'gitbranch': 'FugitiveHead'
+        \   'gitbranch': 'FugitiveHead',
         \ },
 \ }
 
