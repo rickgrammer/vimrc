@@ -28,6 +28,12 @@
             "after": [
                 "m", "i", "o", "<Esc>", "0", "D", "`", "i"
             ]
+        },
+        {
+            "before": ["leader", "d"],
+            "after": [
+                ":", "q", "<Enter>"
+            ]
         }
     ],
     "emmet.showAbbreviationSuggestions": true,
