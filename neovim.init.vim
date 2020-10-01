@@ -2,6 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 "map Esc
@@ -80,3 +82,11 @@ nnoremap <leader>b oimport pdb; pdb.set_trace();<Esc>
 nnoremap <C-p> :Files<CR>
 
 set foldlevel=1
+
+"toggle Nerdtree
+map <F3> :NERDTreeToggle<CR>
+
+"terminal map
+tnoremap jk <C-\><C-n>
+
+
