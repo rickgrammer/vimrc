@@ -4,6 +4,7 @@
     "editor.scrollBeyondLastLine": true,
     "vim.leader": "<space>",
     "vim.hlsearch": true,
+    "vim.ignorecase": false,
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": ["leader", "n"],
