@@ -90,3 +90,5 @@ map <F3> :NERDTreeToggle<CR>
 tnoremap jk <C-\><C-n>
 
 
+
+
