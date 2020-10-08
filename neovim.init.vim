@@ -59,6 +59,10 @@ set incsearch
 set splitright
 set splitbelow
 
+"autofill braces
+inoremap { {}<Esc>i
+inoremap [ []<Esc>i
+
 "yank/paste to system's clipboard
 set clipboard=unnamedplus
 nnoremap <leader>y "+y
@@ -89,6 +93,13 @@ map <F3> :NERDTreeToggle<CR>
 "terminal map
 tnoremap jk <C-\><C-n>
 
+"split terminal down
+nnoremap <leader>t- :sp<CR>10<C-w>-:term<CR>
+nnoremap <leader>t] :vs<CR>:term<CR>
 
+"split down
+nnoremap <leader>- :sp<CR>
+"split right
+nnoremap <leader>] :vs<CR>
 
 
