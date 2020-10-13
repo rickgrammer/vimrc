@@ -123,6 +123,7 @@ alias vim=nvim
 alias vimrc="vi ~/.vimrc"
 alias nvimrc="vi ~/.config/nvim/init.vim"
 alias bashrc="vi ~/.bashrc"
+alias cppl="cd ~/work/cp/cpp/learn/"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 bind 'set completion-ignore-case on'
