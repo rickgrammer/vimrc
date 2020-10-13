@@ -102,4 +102,9 @@ nnoremap <leader>- :sp<CR>
 "split right
 nnoremap <leader>] :vs<CR>
 
-
+"expand tab to spaces
+set expandtab
+"set indent width to 4 spaces
+set shiftwidth=4
+"make tabs 4 spaces wide
+set tabstop=4
