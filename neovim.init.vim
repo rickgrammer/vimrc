@@ -63,6 +63,9 @@ set splitbelow
 inoremap { {}<Esc>i
 inoremap [ []<Esc>i
 
+"opening with indented block
+inoremap {<CR> <Space>{}<Esc>i<CR><Esc>O
+
 "yank/paste to system's clipboard
 set clipboard=unnamedplus
 nnoremap <leader>y "+y
