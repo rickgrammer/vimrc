@@ -54,5 +54,6 @@
     "window.zoomLevel": -1,
     "editor.cursorBlinking": "solid",
     "vim.useSystemClipboard": true,
-    "go.formatTool": "goimports"
+    "go.formatTool": "goimports",
+    "C_Cpp.updateChannel": "Insiders"
 }
