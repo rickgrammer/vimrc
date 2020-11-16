@@ -111,3 +111,9 @@ set expandtab
 set shiftwidth=4
 "make tabs 4 spaces wide
 set tabstop=4
+
+"save session before maximising the pane
+nnoremap <C-w>m :mksession! ~/.session.vim<CR><C-w>o
+
+"restore session thereby minimising the pane
+nnoremap <C-w>n :source ~/.session.vim<CR>
