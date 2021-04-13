@@ -55,5 +55,8 @@
     "editor.cursorBlinking": "solid",
     "vim.useSystemClipboard": true,
     "go.formatTool": "goimports",
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.editorAssociations": [],
+    "todo-tree.tree.showScanModeButton": false,
+    "workbench.colorTheme": "Visual Studio Dark"
 }
