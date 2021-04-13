@@ -117,3 +117,7 @@ nnoremap <C-w>m :mksession! ~/.session.vim<CR><C-w>o
 
 "restore session thereby minimising the pane
 nnoremap <C-w>n :source ~/.session.vim<CR>
+
+"c++ lib
+nnoremap <leader>cp i#include<bits/stdc++.h><CR>using namespace std;<CR><CR>int main() {<CR>}<Esc>O
+
