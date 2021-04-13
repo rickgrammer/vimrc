@@ -128,6 +128,11 @@ alias ali="cd /home/ashfaq/work/cp/cpp/alimiro"
 alias enterg=". /home/ashfaq/work/garage/python/envs/garage/bin/activate"
 alias garage="cd /home/ashfaq/work/garage"
 alias d="deactivate"
+alias lb="cd /home/ashfaq/work/cp/love_babbar_459/"
+alias turtleb="cd /home/ashfaq/work/turtlepost"
+alias turtlef="cd /home/ashfaq/work/turtlepost-frontend/turtlepost"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 bind 'set completion-ignore-case on'
+
+alias gll="git log --graph --all --decorate"
