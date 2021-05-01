@@ -133,6 +133,7 @@ alias turtleb="cd /home/ashfaq/work/turtlepost"
 alias turtlef="cd /home/ashfaq/work/turtlepost-frontend/turtlepost"
 alias msf="cd /home/ashfaq/work/mudrantar/dms-frontend/"
 alias msb="cd /home/ashfaq/work/mudrantar/dms-backend/"
+alias pf="cd /home/ashfaq/work/mudrantar/platform-web/"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 bind 'set completion-ignore-case on'
