@@ -58,5 +58,14 @@
     "C_Cpp.updateChannel": "Insiders",
     "workbench.editorAssociations": [],
     "todo-tree.tree.showScanModeButton": false,
-    "workbench.colorTheme": "Visual Studio Dark"
+    "workbench.colorTheme": "Visual Studio Dark",
+    "files.associations": {
+        "*.vue": "vue"
+    },
+    "[vue]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+    },
+    "vetur.experimental.templateInterpolationService": true,
+    "sync.gist": "6821b2256b4edc8f4ff5e48fefa939f2",
 }
