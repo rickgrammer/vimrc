@@ -4,6 +4,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
+Plug 'kassio/neoterm'
 call plug#end()
 
 "map Esc
@@ -66,10 +67,9 @@ inoremap [ []<Esc>i
 "opening with indented block
 inoremap {<CR> <Space>{}<Esc>i<CR><Esc>O
 
-"yank/paste to system's clipboard
-set clipboard=unnamedplus
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
+"yank/paste to system's clipboard; use only for ubuntu & comment it for wsl
+" nnoremap <leader>y "+y
+" nnoremap <leader>p "+p
 
 "leader key mappings
 nnoremap <leader>w :w!<CR>
@@ -97,8 +97,9 @@ map <F3> :NERDTreeToggle<CR>
 tnoremap jk <C-\><C-n>
 
 "split terminal down
-nnoremap <leader>t- :sp<CR>10<C-w>-:term<CR>
-nnoremap <leader>t] :vs<CR>:term<CR>
+nnoremap <leader>t- :sp<CR>10<C-w>-:Tnew<CR>
+nnoremap <leader>t] :vs<CR>:Tnew<CR>
+nnoremap <leader>tt :Tnew<CR>
 
 "split down
 nnoremap <leader>- :sp<CR>
@@ -113,11 +114,41 @@ set shiftwidth=4
 set tabstop=4
 
 "save session before maximising the pane
-nnoremap <C-w>m :mksession! ~/.session.vim<CR><C-w>o
+fu! SaveTempSession()
+   if !empty(expand("~/.session.vim"))
+       echo "session saved"
+       execute 'mksession! ~/.session.vim'
+   endif
+endfunction 
+nnoremap <C-w>m :call SaveTempSession()<CR><C-w>o
 
 "restore session thereby minimising the pane
-nnoremap <C-w>n :source ~/.session.vim<CR>
+fu! RestoreTempSession()
+   if (filereadable(expand("~/.session.vim")) == 1)
+       echo 'session restored'
+       execute 'source ~/.session.vim'
+       execute ':call delete(expand("~/.session.vim"))'
+   endif
+endfunction 
+nnoremap <C-w>n :call RestoreTempSession()<CR>
 
 "c++ lib
 nnoremap <leader>cp i#include<bits/stdc++.h><CR>using namespace std;<CR><CR>int main() {<CR>}<Esc>O
 
+" use it for wsl2 with windows (which you probably would never use again
+" because windows is just too awesome to use). 
+set clipboard+=unnamedplus
+let g:clipboard =  {
+          \   'name': 'win32yank-wsl-2',
+          \   'copy':  {
+          \      '+': 'win32yank.exe -i --crlf',
+          \      '*': 'win32yank.exe -i --crlf',
+          \    },
+          \   'paste':  {
+          \      '+': 'win32yank.exe -o --lf',
+          \      '*': 'win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 0,
+          \ }
+
+:
