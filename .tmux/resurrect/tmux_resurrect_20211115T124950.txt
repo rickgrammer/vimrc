@@ -1,0 +1,9 @@
+pane	jb	0	0	:-	0	:/home/ashfaq/work/jedi-backend	1	nvim	:/tmp/.mount_nvim9PeZ9V/usr/bin/nvim
+pane	jb	1	1	:*	0	:/home/ashfaq	1	zsh	:
+pane	jf	0	1	:*	0	:/home/ashfaq/work/jedi-web	1	nvim	:/tmp/.mount_nvimta0oQW/usr/bin/nvim
+pane	jf	1	0	:-	0	:/home/ashfaq	1	nvim	:/tmp/.mount_nvimMyXxKL/usr/bin/nvim
+window	jb	0	:nvim	0	:-	b7df,239x61,0,0,2	:
+window	jb	1	:zsh	1	:*	b7e2,239x61,0,0,5	:
+window	jf	0	:nvim	1	:*	b7de,239x61,0,0,1	:
+window	jf	1	:nvim	0	:-	b7e0,239x61,0,0,3	:
+state	jb	jf
